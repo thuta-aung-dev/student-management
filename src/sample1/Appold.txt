@@ -1,0 +1,35 @@
+/*import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Playground1 from "./sample1/playground1"; // စာလုံးအသေး playground1 ဖြစ်ရမယ်
+import Posts from "./sample1/Posts";
+import PostDetails from "./sample1/PostDetails"; // ဒီကောင် ကျန်ခဲ့လို့ မရဘူး!
+import Edit from "./sample1/edit";
+import { useContext } from "react";
+import { ThemeContext } from "./sample1/Themecontent";
+function App() {
+  const {isDarkmode,toggleTheme}  = useContext(ThemeContext);
+  return (
+    <BrowserRouter>
+       <div style={{ background: '#222', minHeight: '100vh', color: isDarkmode?'white':'black', transition:"all 0.3 ease" }}>
+          <nav style={{ padding: '20px', background: isDarkmode ? '#111' : '#f0f0f0', display: 'flex', justifyContent: 'space-between' }}>
+              <Link to="/" style={{ color: isDarkmode ? 'white' : 'black', marginRight: '10px' }}>Home</Link> | 
+              <Link to="/users" style={{ color: isDarkmode ? 'white' : 'black', marginLeft: '10px' }}>Users list</Link> |
+              <Link to="/posts" style={{ color: isDarkmode ? 'white' : 'black', marginLeft: '15px' }}>New Feed</Link>
+              <Link to="/create" style={{ color: "#646cff", marginLeft: '15px', fontWeight: 'bold' }}>Create Post ➕</Link> {/* လင့်အသစ် 
+              <button onClick={toggleTheme} style={{ cursor: 'pointer', padding: '5px 10px' }}>
+                {isDarkmode ? 'Light Mode ☀️' : 'Dark Mode 🌙'}
+            </button>
+          </nav>
+
+          <Routes>
+            <Route path="/" element={<h2 style={{ padding: '20px' }}>Home Page ပါ 🏠</h2>}/>
+            <Route path="/users" element={<Playground1/>}/>
+            <Route path="/posts" element={<Posts/>}/>
+            <Route path="/posts/:id" element={<PostDetails/>}/>
+            <Route path="/create" element={<Create/>}/> {/* Route အသစ် }
+            </Routes>
+       </div>
+    </BrowserRouter>
+  );
+}
+
+export default App;*/
