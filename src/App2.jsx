@@ -54,7 +54,7 @@ function App2(){
                 ):showRegister?(
                     <>
                     <Register/>
-                    <button onClick={()=>setShowRegister(false)} className="max-auto mt-4 block text-sm underline">
+                    <button onClick={()=>setShowRegister(false)} className="mx-auto mt-4 block text-sm underline">
                         Already have an account? Login
                     </button>
                     </>
