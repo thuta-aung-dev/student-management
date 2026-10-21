@@ -6,7 +6,9 @@ import { getFirestore } from "firebase/firestore";
 
 const db = getFirestore(app);
 
-function Clothing(){
+function Clothing({isAdmin}){
+
+    console.log("Is Admin:",isAdmin);
 
     const [search,setSearch] = useState("");
     const [category,setCategory] = useState("All");
@@ -202,10 +204,10 @@ function Clothing(){
 
                     <input type="text" onChange={(e)=>setSearch(e.target.value)} value={search} placeholder="Search" className="w-full max-w-xs  rounded-xl  border p-3 mb-4"/>
 
-                    {!editing && (
-                    
-                        <button onClick={()=>handleAdd()} className="rounded-full bg-neutral-950 text-sm px-6 py-3 font-medium text-white transition hover:bg-neutral-700 ">+ Add Product</button>
-                    
+                    {!editing && isAdmin &&(
+                         
+                            <button onClick={()=>handleAdd()} className="rounded-full bg-neutral-950 text-sm px-6 py-3 font-medium text-white transition hover:bg-neutral-700 ">+ Add Product</button>
+                        
                     )}
                 </div>
             </header>
@@ -288,11 +290,14 @@ function Clothing(){
                                                         {p.category}
                                                     </p>
                                                     <h3 className="mt-2 text-lg font-medium tracking-tight text-neutral-950">{p.name}</h3>
-
+                                                
+                                                 {isAdmin && (
                                                     <div className="mt-4 flex gap-3">
                                                     <button onClick={()=>handleEdit(p)} className="flex-1 rounded-lg border border-neutral-300 px-4 py-2 text-sm font-medium transition hover:bg-neutral-100">Edit</button>
                                                     <button onClick={()=>handleDelete(p.id)} className="flex-1 rounded-lg bg-neutral-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-neutral-700">Delete</button>
                                                 </div>
+                                                 )}
+                                                    
                                                 </div>
                                             </div>
                                         )

@@ -47,7 +47,9 @@ function App2(){
                         <button onClick={handleLogout} className="rounded-full bg-black px-5 py-2 text-sm text-white">Logout</button>
                     </div>
 
-                    <Clothing/>
+                    <Clothing
+                    isAdmin={user?.uid=== "eZdZg1YhbNQjXUTxpX4iyt9nPRh1"}
+                    />
                     </>
                 ):showRegister?(
                     <>
